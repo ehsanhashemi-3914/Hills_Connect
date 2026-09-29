@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="8" y="14" width="36" height="26" rx="7"/><path d="M22 21l10 6-10 6z"/>
+  <path d="M130 50C120 43 113 37 113 30a8.5 8.5 0 0 1 17-3a8.5 8.5 0 0 1 17 3c0 7-7 13-17 20z"/>
+  <rect x="224" y="12" width="14" height="22" rx="7"/><path d="M218 28a13 13 0 0 0 26 0M231 41v7M224 48h14"/>
+  <path d="M84 72h12M90 66v12"/>
+  <path d="M270 64q2 8 10 10q-8 2-10 10q-2-8-10-10q8-2 10-10z"/>
+  <polygon points="60,102 63.2,110.6 72.4,111 65.2,116.7 67.6,125.5 60,120.5 52.4,125.5 54.8,116.7 47.6,111 56.8,110.6"/>
+  <rect x="158" y="98" width="36" height="26" rx="6"/><circle cx="176" cy="111" r="7"/><path d="M168 98l3-5h10l3 5"/>
+  <path d="M256 108l-3 22M266 108l-3 22M250 114h20M249 124h20"/>
+  <path d="M23 216c-7-5-7-20 5-22c12 2 12 17 5 22zM24 221h8M25 225h6"/>
+  <path d="M104 186h32a6 6 0 0 1 6 6v14a6 6 0 0 1-6 6h-20l-8 7v-7h-4a6 6 0 0 1-6-6v-14a6 6 0 0 1 6-6z"/><path d="M112 199h.01M120 199h.01M128 199h.01" stroke-width="3.2"/>
+  <path d="M212 214v-22l16-4v22"/><circle cx="208" cy="214" r="4"/><circle cx="224" cy="210" r="4"/>
+  <rect x="252" y="232" width="7" height="22" rx="3.5"/><rect x="262" y="232" width="7" height="22" rx="3.5"/><rect x="272" y="232" width="7" height="22" rx="3.5"/>
+  <path d="M44 265q16-14 32 0q-16 14-32 0z"/><circle cx="60" cy="265" r="4"/>
+  <rect x="152" y="240" width="34" height="26" rx="5"/><path d="M156 262l9-9 6 6 5-4 7 7"/><circle cx="178" cy="248" r="3"/>
+  <path d="M106 262q2 6 8 8q-6 2-8 8q-2-6-8-8q6-2 8-8z"/>
+  <path d="M196 158h14M203 151v14"/>
+  <path d="M96 140l8 8M104 140l-8 8"/>
+</svg>

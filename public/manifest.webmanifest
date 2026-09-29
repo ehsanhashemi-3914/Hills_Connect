@@ -1,0 +1,11 @@
+{
+  "name": "هیلز کانکت — شبکه‌سازی اعضای پروژه هیلز",
+  "short_name": "هیلز کانکت",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0616",
+  "theme_color": "#0b0616",
+  "icons": [{ "src": "/icons/hills.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

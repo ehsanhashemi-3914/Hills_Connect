@@ -1,0 +1,300 @@
+/* ─── Splash & auth ─────────────────────────────────────────────── */
+
+.stage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #0a0514;
+  color: #fff;
+}
+.stage::before,
+.stage::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+.stage::before {
+  width: 60vmax;
+  height: 60vmax;
+  top: -25vmax;
+  right: -20vmax;
+  background: radial-gradient(circle, rgba(198, 0, 224, 0.45), transparent 65%);
+}
+.stage::after {
+  width: 60vmax;
+  height: 60vmax;
+  bottom: -30vmax;
+  left: -20vmax;
+  background: radial-gradient(circle, rgba(110, 60, 255, 0.5), transparent 65%);
+}
+.stage .grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
+}
+
+.splash-mark {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  z-index: 1;
+}
+.splash-word {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 34px;
+  letter-spacing: 0.08em;
+  direction: ltr;
+}
+.splash-word small {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  width: min(420px, calc(100vw - 32px));
+  padding: 34px 26px 26px;
+  border-radius: 30px;
+  background: rgba(20, 12, 38, 0.62);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --text: #f5f2fc;
+  --text-2: #b0a7c8;
+  --text-3: #6f6689;
+  --bg-2: #140c26;
+  --bg-3: rgba(255, 255, 255, 0.06);
+  --line-2: rgba(255, 255, 255, 0.12);
+  --accent: #c58bff;
+}
+@media (max-width: 520px) {
+  .auth-card {
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    padding: 20px 8px;
+  }
+}
+.auth-card .mark {
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+}
+.auth-card h1 {
+  margin: 0 0 6px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 800;
+}
+.auth-card .lead {
+  margin: 0 auto 26px;
+  max-width: 320px;
+  text-align: center;
+  color: var(--text-2);
+  font-size: 14.5px;
+  line-height: 1.85;
+}
+.phone-field {
+  display: flex;
+  align-items: center;
+  height: 58px;
+  border-radius: 16px;
+  border: 1.5px solid var(--line-2);
+  background: var(--bg-3);
+  overflow: hidden;
+  direction: ltr;
+  transition: border-color 0.15s;
+}
+.phone-field:focus-within {
+  border-color: var(--accent);
+}
+.phone-field .cc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  padding: 0 14px;
+  border-right: 1.5px solid var(--line-2);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-2);
+}
+.phone-field input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  padding: 0 14px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.phone-field input::placeholder {
+  color: var(--text-3);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.auth-error {
+  margin: 10px 4px 0;
+  color: var(--danger);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-align: center;
+}
+.auth-foot {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.otp {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  direction: ltr;
+  margin-bottom: 10px;
+}
+.otp input {
+  width: 54px;
+  height: 62px;
+  border-radius: 16px;
+  border: 1.5px solid var(--line-2);
+  background: var(--bg-3);
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  outline: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.otp input:focus {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.otp input.filled {
+  border-color: rgba(197, 139, 255, 0.55);
+}
+.otp.shake {
+  animation: shake 0.4s;
+}
+@keyframes shake {
+  20%,
+  60% {
+    transform: translateX(-8px);
+  }
+  40%,
+  80% {
+    transform: translateX(8px);
+  }
+}
+.demo-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: max-content;
+  margin: 14px auto 0;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: rgba(197, 139, 255, 0.12);
+  color: #d9b8ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.link-btn {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+}
+.row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+.avatar-pick {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 22px;
+  cursor: pointer;
+}
+.avatar-pick .cam {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--grad);
+  border: 3px solid #140c26;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.username-field {
+  position: relative;
+}
+.username-field .at {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  translate: 0 -50%;
+  color: var(--text-3);
+  font-weight: 600;
+}
+.username-field .field {
+  direction: ltr;
+  padding-left: 34px;
+  text-align: left;
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+}
+
+.demo-badge {
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 18px;
+  padding: 5px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: #b0a7c8;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
